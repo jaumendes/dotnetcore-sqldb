@@ -35,5 +35,5 @@ dotnet tool install -g dotnet-ef
 ## 3 (re) create DB
 dotnet ef database update
 
-# 4 run
+## 4 run
 dotnet run
