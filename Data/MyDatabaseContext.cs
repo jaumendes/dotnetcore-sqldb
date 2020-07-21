@@ -14,5 +14,18 @@ namespace DotNetCoreSqlDb.Models
         }
 
         public DbSet<DotNetCoreSqlDb.Models.Todo> Todo { get; set; }
+
+        public DbSet<Product> Product { get; set; }
+
+
+        public Product GetProductById(int id)
+        {
+            return this.Product.FirstOrDefault(product => product.Id == id);
+        }
+
+        public Product GetProductByName(string name)
+        {
+            return this.Product.FirstOrDefault(product => product.Name.ToLower().StartsWith(name.ToLower()));
+        }
     }
 }
