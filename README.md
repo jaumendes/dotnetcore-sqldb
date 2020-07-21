@@ -23,14 +23,15 @@ See [LICENSE](LICENSE.md).
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
   
-# 1 Visit for info
+# DEPLOY #
+## 1 Visit for more info
 https://docs.microsoft.com/pt-pt/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb
 
-# 2 install packages 
+## 2 install packages 
 dotnet tool install -g dotnet-ef
 
-# 3 (RE) Create DB
+## 3 (RE) Create DB
 dotnet ef database update
 
-# 4
+# 4 Run
 dotnet run
