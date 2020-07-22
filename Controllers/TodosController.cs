@@ -53,7 +53,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,CreatedDate")] Todo todo)
+        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,CreatedDate")] Todo todo)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,CreatedDate")] Todo todo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,CreatedDate")] Todo todo)
         {
             if (id != todo.ID)
             {

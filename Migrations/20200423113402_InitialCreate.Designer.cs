@@ -24,16 +24,21 @@ namespace DotNetCoreSqlDb.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-                        
+                   .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    
+                    b.Property<string>("Calories")
+                    .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("TEXT");
+
+
+
+
 
                     b.HasKey("ID");
 
