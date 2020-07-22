@@ -25,6 +25,9 @@ namespace DotNetCoreSqlDb.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+                        
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 

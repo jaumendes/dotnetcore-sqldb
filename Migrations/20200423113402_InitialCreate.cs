@@ -15,6 +15,8 @@ namespace DotNetCoreSqlDb.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    
+                    Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     CreatedDate = table.Column<DateTime>(nullable: false)
                 },
