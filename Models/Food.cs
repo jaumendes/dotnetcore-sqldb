@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DotNetCoreSqlDb.Models
 {
-    public class Todo
+    public class Food
     {
         public int ID { get; set; }
         public string Name { get; set; }

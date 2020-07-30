@@ -9,22 +9,22 @@ using DotNetCoreSqlDb.Models;
 
 namespace DotNetCoreSqlDb.Controllers
 {
-    public class TodosController : Controller
+    public class FoodsController : Controller
     {
         private readonly MyDatabaseContext _context;
 
-        public TodosController(MyDatabaseContext context)
+        public FoodsController(MyDatabaseContext context)
         {
             _context = context;
         }
 
-        // GET: Todos
+        // GET: Foods
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Todo.ToListAsync());
+            return View(await _context.Food.ToListAsync());
         }
 
-        // GET: Todos/Details/5
+        // GET: Foodss/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +32,39 @@ namespace DotNetCoreSqlDb.Controllers
                 return NotFound();
             }
 
-            var todo = await _context.Todo
+            var food = await _context.Food
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (todo == null)
+            if (food == null)
             {
                 return NotFound();
             }
 
-            return View(todo);
+            return View(food);
         }
 
-        // GET: Todos/Create
+        // GET: Foodss/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Todos/Create
+        // POST: Foodss/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,CreatedDate")] Todo todo)
+        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,CreatedDate")] Food food)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(todo);
+                _context.Add(food);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(todo);
+            return View(food);
         }
 
-        // GET: Todos/Edit/5
+        // GET: Foods/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +72,22 @@ namespace DotNetCoreSqlDb.Controllers
                 return NotFound();
             }
 
-            var todo = await _context.Todo.FindAsync(id);
-            if (todo == null)
+            var food = await _context.Food.FindAsync(id);
+            if (food == null)
             {
                 return NotFound();
             }
-            return View(todo);
+            return View(food);
         }
 
-        // POST: Todos/Edit/5
+        // POST: Foods/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,CreatedDate")] Todo todo)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,CreatedDate")] Food food)
         {
-            if (id != todo.ID)
+            if (id != food.ID)
             {
                 return NotFound();
             }
@@ -96,12 +96,12 @@ namespace DotNetCoreSqlDb.Controllers
             {
                 try
                 {
-                    _context.Update(todo);
+                    _context.Update(food);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TodoExists(todo.ID))
+                    if (!FoodExists(food.ID))
                     {
                         return NotFound();
                     }
@@ -112,10 +112,10 @@ namespace DotNetCoreSqlDb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(todo);
+            return View(food);
         }
 
-        // GET: Todos/Delete/5
+        // GET: Foods/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +123,30 @@ namespace DotNetCoreSqlDb.Controllers
                 return NotFound();
             }
 
-            var todo = await _context.Todo
+            var food = await _context.Food
                 .FirstOrDefaultAsync(m => m.ID == id);
-            if (todo == null)
+            if (food == null)
             {
                 return NotFound();
             }
 
-            return View(todo);
+            return View(food);
         }
 
-        // POST: Todos/Delete/5
+        // POST: Foods/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var todo = await _context.Todo.FindAsync(id);
-            _context.Todo.Remove(todo);
+            var food = await _context.Food.FindAsync(id);
+            _context.Food.Remove(food);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TodoExists(int id)
+        private bool FoodExists(int id)
         {
-            return _context.Todo.Any(e => e.ID == id);
+            return _context.Food.Any(e => e.ID == id);
         }
     }
 }

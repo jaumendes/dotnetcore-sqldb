@@ -16,12 +16,11 @@ namespace DotNetCoreSqlDb.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.3");
 
-            modelBuilder.Entity("DotNetCoreSqlDb.Models.Todo", b =>
+            modelBuilder.Entity("DotNetCoreSqlDb.Models.Food", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
 
 
                     b.Property<string>("Name")
@@ -38,7 +37,7 @@ namespace DotNetCoreSqlDb.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Todo");
+                    b.ToTable("Food");
                 });
 #pragma warning restore 612, 618
         }
