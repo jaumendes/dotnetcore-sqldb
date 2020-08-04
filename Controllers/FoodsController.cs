@@ -23,7 +23,14 @@ namespace DotNetCoreSqlDb.Controllers
         }
 
         // GET: Foods
-        public async Task<IActionResult> All()
+        public async Task<IActionResult> Indez()
+        {
+            return View(await _context.Food.ToListAsync());
+            
+        }
+
+        // GETALL: Foods
+        public async Task<IActionResult> GetAll()
         {
             return Json(await _context.Food.ToListAsync());
             
