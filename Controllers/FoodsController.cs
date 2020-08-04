@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DotNetCoreSqlDb.Models;
+using DotNetCoreSqlDb.Resources;
+
+using System.Text.Json;
+using Microsoft.Extensions.Logging;
 
 namespace DotNetCoreSqlDb.Controllers
 {
@@ -21,10 +25,11 @@ namespace DotNetCoreSqlDb.Controllers
         // GET: Foods
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Food.ToListAsync());
+            return Json(await _context.Food.ToListAsync());
+            
         }
 
-        // GET: Foodss/Details/5
+        // GET: Foods/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,13 +47,14 @@ namespace DotNetCoreSqlDb.Controllers
             return View(food);
         }
 
-        // GET: Foodss/Create
+        // GET: Foods/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Foodss/Create
+      
+        // POST: Foods/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -72,6 +78,9 @@ namespace DotNetCoreSqlDb.Controllers
                 return NotFound();
             }
 
+
+
+            
             var food = await _context.Food.FindAsync(id);
             if (food == null)
             {
