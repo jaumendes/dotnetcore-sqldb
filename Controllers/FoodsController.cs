@@ -23,7 +23,7 @@ namespace DotNetCoreSqlDb.Controllers
         }
 
         // GET: Foods
-        public async Task<IActionResult> Indez()
+        public async Task<IActionResult> Index()
         {
             return View(await _context.Food.ToListAsync());
             
@@ -75,6 +75,22 @@ namespace DotNetCoreSqlDb.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(food);
+        }
+
+        [HttpPost]
+        // POST FOOD //
+        // http://localhost:5000/Foods/addfood
+        public async Task<IActionResult> AddFood([FromBody] Food food)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(food);
+                await _context.SaveChangesAsync();
+                return Json(food);
+                //return RedirectToAction(nameof(Index));
+            }
+            
+            return Json(new {error = "An error occurred when adding product to database"});
         }
 
         // GET: Foods/Edit/5
