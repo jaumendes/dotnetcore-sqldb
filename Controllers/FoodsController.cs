@@ -66,7 +66,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,CreatedDate")] Food food)
+        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Vitamins,Source,CreatedDate")] Food food)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,CreatedDate")] Food food)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Vitamins,Source,CreatedDate")] Food food)
         {
             if (id != food.ID)
             {

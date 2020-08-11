@@ -19,6 +19,13 @@ namespace DotNetCoreSqlDb.Migrations
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     Calories = table.Column<int>(nullable: true),
+                    Carbs    = table.Column<double>(nullable: true),
+                    Fats     = table.Column<double>(nullable: true),
+                    Proteins = table.Column<double>(nullable: true),
+                    Sugars   = table.Column<double>(nullable: true),
+                    SatFats  = table.Column<double>(nullable: true),
+                    Vitamins  = table.Column<string>(nullable: true),
+                    Source     = table.Column<string>(nullable: true),
                     CreatedDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>

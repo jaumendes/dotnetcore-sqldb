@@ -27,6 +27,8 @@ namespace DotNetCoreSqlDb
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+
+                    
                 });
     }
 }

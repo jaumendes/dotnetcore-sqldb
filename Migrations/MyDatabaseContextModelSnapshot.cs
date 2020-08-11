@@ -32,6 +32,28 @@ namespace DotNetCoreSqlDb.Migrations
                     b.Property<string>("Calories")
                  .HasColumnType("INTEGER");
 
+                 b.Property<string>("Proteins")
+                    .HasColumnType("DOUBLE");
+
+                    b.Property<string>("Fats")
+                    .HasColumnType("DOUBLE");
+
+                    b.Property<string>("SatFats")
+                    .HasColumnType("DOUBLE");
+
+                 b.Property<string>("Carbs")
+                    .HasColumnType("DOUBLE");       
+
+                    b.Property<string>("Sugars")
+                    .HasColumnType("DOUBLE");
+                    
+
+                    b.Property<string>("Vitamins")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Source")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("CreatedDate")
                           .HasColumnType("TEXT");
 

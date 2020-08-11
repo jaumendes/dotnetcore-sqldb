@@ -11,6 +11,24 @@ namespace DotNetCoreSqlDb.Models
 
         public int Calories { get; set; }
 
+        public double Proteins { get; set; }
+
+        public double Fats { get; set; }
+
+        public double SatFats { get; set; }
+
+        public double Carbs { get; set; }
+
+        public double Sugars { get; set; }
+
+        public string Vitamins { get; set; }
+
+        public string Source { get; set; }
+
+        
+
+        
+
         [Display(Name = "Created Date")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
