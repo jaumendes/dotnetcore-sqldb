@@ -33,28 +33,35 @@ namespace DotNetCoreSqlDb.Migrations
                     b.Property<string>("Calories")
                     .HasColumnType("INTEGER");
 
-                    b.Property<string>("Carbs")
-                    .HasColumnType("DOUBLE");
+                    
 
-                    b.Property<string>("Proteins")
-                    .HasColumnType("DOUBLE");
+                    b.Property<double>("Proteins")
+                    .HasColumnType("FLOAT");
 
 
-                    b.Property<string>("Fats")
-                    .HasColumnType("DOUBLE");
+                    b.Property<double>("Fats")
+                    .HasColumnType("FLOAT");
 
-                    b.Property<string>("Sugars")
-                    .HasColumnType("DOUBLE");
+                    b.Property<double>("SatFats")
+                    .HasColumnType("FLOAT");
 
-                    b.Property<string>("SatFats")
-                    .HasColumnType("DOUBLE");
+                    b.Property<double>("Carbs")
+                    .HasColumnType("FLOAT");
+
+                    b.Property<double>("Sugars")
+                    .HasColumnType("FLOAT");
+
+                    b.Property<double>("Fibers")
+                    .HasColumnType("FLOAT");                    
 
                     b.Property<string>("Vitamins")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Source")
+                    b.Property<string>("Minerals")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Source")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("TEXT");

@@ -29,7 +29,7 @@ namespace DotNetCoreSqlDb.Controllers
             
         }
 
-        // GETALL: Foods
+        // localhost:5000/Foods/GETALL
         public async Task<IActionResult> GetAll()
         {
             return Json(await _context.Food.ToListAsync());
@@ -66,7 +66,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Vitamins,Source,CreatedDate")] Food food)
+        public async Task<IActionResult> Create([Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Fibers,Vitamins,Minerals,Source,CreatedDate")] Food food)
         {
             if (ModelState.IsValid)
             {
@@ -117,7 +117,7 @@ namespace DotNetCoreSqlDb.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Vitamins,Source,CreatedDate")] Food food)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Description,Calories,Proteins,Fats,SatFats,Carbs,Sugars,Fibers,Vitamins,Minerals,Source,CreatedDate")] Food food)
         {
             if (id != food.ID)
             {

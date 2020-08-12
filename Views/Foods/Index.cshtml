@@ -21,7 +21,6 @@
               <th>
                 @Html.DisplayNameFor(model => model.Calories)
             </th>
-
              <th>
                 @Html.DisplayNameFor(model => model.Proteins)
             </th>
@@ -38,7 +37,13 @@
                 @Html.DisplayNameFor(model => model.Sugars)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Fibers)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Vitamins)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Minerals)
             </th>
              <th>
                 @Html.DisplayNameFor(model => model.Source)
@@ -78,7 +83,13 @@
                 @Html.DisplayFor(modelItem => item.Sugars)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Fibers)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Vitamins)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Minerals)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Source)

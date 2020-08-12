@@ -19,7 +19,11 @@ namespace DotNetCoreSqlDb.Resources
 
         public double Sugars { get; set; }
 
+        public double Fibers { get; set; }
+
         public string Vitamins { get; set; }
+
+         public string Minerals { get; set; }
 
         public string Source { get; set; }
 

@@ -30,36 +30,46 @@
 
             <div class="form-group">
                 <label asp-for="Proteins" class="control-label"></label>
-                <input asp-for="Proteins" class="form-control" />
+                <input type="number" step="any" asp-for="Proteins" class="form-control" />
                 <span asp-validation-for="Proteins" class="text-danger"></span>
             </div>            
             
             <div class="form-group">
                 <label asp-for="Fats" class="control-label"></label>
-                <input asp-for="Fats" class="form-control" />
+                <input type="number" step="any" asp-for="Fats" class="form-control" />
                 <span asp-validation-for="Fats" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="SatFats" class="control-label"></label>
-                <input asp-for="SatFats" class="form-control" />
+                <input type="number" step="any" asp-for="SatFats" class="form-control" />
                 <span asp-validation-for="SatFats" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Carbs" class="control-label"></label>
-                <input asp-for="Carbs" class="form-control" />
+                <input type="number" step="0.25" asp-for="Carbs" class="form-control" />
                 <span asp-validation-for="Carbs" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Sugars" class="control-label"></label>
-                <input asp-for="Sugars" class="form-control" />
+                <input type="number" step="0.25" asp-for="Sugars" class="form-control" />
                 <span asp-validation-for="Sugars" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fibers" class="control-label"></label>
+                <input type="number" step="0.25" asp-for="Fibers" class="form-control" />
+                <span asp-validation-for="Fibers" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label asp-for="Vitamins" class="control-label"></label>
                 <input asp-for="Vitamins" class="form-control" />
                 <span asp-validation-for="Vitamins" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Minerals" class="control-label"></label>
+                <input asp-for="Minerals" class="form-control" />
+                <span asp-validation-for="Minerals" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Source" class="control-label"></label>
